@@ -18,3 +18,4 @@ if __name__ == "__main__":
     file_name = input("Input csv file name: ")
     new_file_name = re_factory_csv(file_name)
     print("Refactory to: ", new_file_name)
+    input()

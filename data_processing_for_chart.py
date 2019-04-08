@@ -1,3 +1,26 @@
+import csv
+
+
+def parsing_csv(file_name, start_x, end_x):
+    y = []
+    x = []
+    head = []
+    with open(file_name, 'r') as in_file:
+        content = csv.reader(in_file)
+        count = 0
+        for line in content:
+            if count == 0:
+                head = line
+                for n in range(1, len(line)):
+                    y.append([])
+            else:
+                num = float(line[0])
+                if (num > start_x) and (num < end_x):
+                    x.append(num)
+                    for n in range(1, len(line)):
+                        y[n - 1].append(float(line[n]))
+            count = count + 1
+    return x, y, head
 
 
 def find_max_in_mass_mass_by_self(mass_mass):

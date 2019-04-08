@@ -1,30 +1,12 @@
-import csv
 import matplotlib.pyplot as plt
 from data_processing_for_chart import *
 
-
-file_name = "./content/589_r.csv"
-
-header = []
-x = []
-y = []
-y_len = 0
+# ======================================
 line_style = ('-', '--', '-.')
+# ======================================
 
-with open(file_name, 'r') as in_file:
-    content = csv.reader(in_file)
-    count = 0
-    for line in content:
-        if count == 0:
-            header = line
-            y_len = len(line) - 1
-            for n in range(1, len(line)):
-                y.append([])
-        else:
-            x.append(float(line[0]))
-            for n in range(1, len(line)):
-                y[n-1].append(float(line[n]))
-        count = count + 1
+file_name = "./content/405_r.csv"
+x, y, header = parsing_csv(file_name, 550, 650)
 
 print(header)
 
