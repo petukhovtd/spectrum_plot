@@ -6,3 +6,4 @@ s = (a / 2) * (b / 2) * 3.14
 print(s)
 Ps = E / (t * s)
 print("{:.1f} МВт/см2".format(Ps*1e-6))
+input()

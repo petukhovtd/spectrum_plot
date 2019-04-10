@@ -72,5 +72,14 @@ def find_cross(x, y, level):
     return cross
 
 
+def print_cross(mass):
+    if len(mass) % 2 != 0:
+        print("Error print cross")
+        return False
+    print("Cross:")
+    for i in range(0, len(mass) - 1, 2):
+        print("({:.2f} - {:.2f})\tdl: {:.2f}".format(mass[i], mass[i+1], mass[i+1] - mass[i]))
+
+
 if __name__ == "__main__":
     print("")
